@@ -11,9 +11,18 @@ function ColorList() {
  
  
 
-  const colorElements = colors.map((color, index) => {
-    return <li key={index} style={{ color: color }}>{color}</li>;
+  // const colorElements = colors.map((color, index) => {
+  //   return <li key={index} style={{ color: color }}>{color}</li>;
+  // });
+
+  function ColorItem(props) {
+    return <li style={{ color: props.color }}>{props.color}</li>;
+  }
+
+  const colorElements = colors.map((color) => {
+    return <ColorItem key={color} color={color} />;
   });
+  
 
   return (
     <div>
@@ -24,7 +33,6 @@ function ColorList() {
         <li style={{ color: colors[2] }}>{colors[2]}</li>
         <li style={{ color: colors[3] }}>{colors[3]}</li>
         <li style={{ color: colors[4] }}>{colors[4]}</li> */}
-
         {colorElements}
       </ol>
     </div>
